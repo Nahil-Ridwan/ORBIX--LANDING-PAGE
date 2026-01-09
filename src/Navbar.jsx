@@ -14,7 +14,7 @@ const Navbar = () => {
         window.location.href = url;
       }
   return (
-    <div >
+    <div className="overflow-x-hidden">
         <nav className="fixed w-full z-50 bg-gray-800/60 backdrop-blur-md border-b border-orange-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
