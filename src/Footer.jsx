@@ -64,7 +64,7 @@ const Footer = () => {
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
                       className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
-                      iOS
+                      ios
                     </a>
                   </div>
                 )}

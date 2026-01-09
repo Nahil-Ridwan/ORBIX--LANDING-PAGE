@@ -1,8 +1,6 @@
 import  { useState } from 'react';
 import {
-  Menu,
-  X,
-  
+  Download
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -88,14 +86,13 @@ const Navbar = () => {
               {/* Mobile download toggle */}
               <button
                 onClick={() => setIsDownloadOpen((s) => !s)}
-                className="bg-[#e56d11] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#c05d11] transition shadow-lg shadow-emerald-600/20 focus:outline-none focus:ring-0 focus:border-none"
+                className="bg-[#e56d11] text-white px-4 py-[10px] rounded-xl font-medium hover:bg-[#c05d11] transition shadow-lg shadow-emerald-600/20 focus:outline-none focus:ring-0 focus:border-none"
                 type="button"
               >
-                Download
-                <span className="ml-2 text-white">{isDownloadOpen ? '▴' : '▾'}</span>
+                <Download size={20}/>
               </button>
              {isDownloadOpen && (
-                  <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 mt-35 mr-25 z-50">
+                  <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 mt-35 mr-14 z-50">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
                       className="block px-4 py-2 text-sm font-bold text-orange-400"
@@ -106,7 +103,7 @@ const Navbar = () => {
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
                       className="block px-4 py-2 text-sm font-bold text-orange-400"
                     >
-                      iOS
+                      ios
                     </a>
                   </div>
                 )}
