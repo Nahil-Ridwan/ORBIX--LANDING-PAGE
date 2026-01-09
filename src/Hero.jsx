@@ -11,9 +11,18 @@ const Hero = () => {
   ];
 
   const text = [
-    `Experience precision, reliability, and peace of mind on every journey`,
-    'Pioneering GPS Solutions: Seamlessly connecting you to your vehicles with advanced tracking technology'
-  ];
+  {
+    kicker: "WELCOME TO ORBITRACKER",
+    line1: "Experience peace of",
+    line2: "mind on every journey",
+  },
+  {
+    kicker: "SMART GPS SOLUTIONS",
+    line1: "Seamlessly connecting",
+    line2: "you to your vehicles",
+  },
+];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,7 +46,7 @@ const Hero = () => {
   return (
     <div
   id="home"
-  className="relative min-h-[100svh] font-sans text-slate-800 flex items-center justify-start overflow-hidden"
+  className="relative min-h-[100svh] text-slate-800 flex items-center justify-start overflow-hidden"
 >
 
       {/* Background images with fade transition */}
@@ -57,20 +66,33 @@ const Hero = () => {
       {/* Caption only — no headings */}
       <section className="relative w-full z-10">
         <div className="w-full px-6 sm:px-8 lg:px-12 relative text-left font-bold">
-          <div className="relative h-28 md:h-32 lg:h-36 mt-6 w-full max-w-3xl">
+          <div className="relative h-40 md:h-48 lg:h-52 mt-6 w-full max-w-3xl">
+  {text.map((item, idx) => (
+    <div
+      key={idx}
+      className={`absolute inset-0 transition-opacity duration-700 ${
+        idx === bgIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+      aria-hidden={idx === bgIndex ? 'false' : 'true'}
+    >
+      {/* Small intro line */}
+      <p className="text-lg uppercase leading-10 tracking-widest text-slate-300 mb-3">
+        {item.kicker}
+      </p>
 
-            {text.map((t, idx) => (
-              <p
-                key={idx}
-                className={`absolute inset-y-0 left-0 flex items-center px-0 text-left max-w-3xl text-xl md:text-2xl lg:text-3xl text-slate-100 transition-opacity duration-700 ${
-                  idx === bgIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                }`}
-                aria-hidden={idx === bgIndex ? 'false' : 'true'}
-              >
-                {t}
-              </p>
-            ))}
-          </div>
+      {/* Main headline */}
+      <h1 className="font-extrabold tracking-tight leading-10 text-slate-100 leading-tight
+                     text-3xl sm:text-4xl md:text-5xl lg:text-[44px]">
+        {item.line1}
+        <br />
+        <span className="text-slate-200 leading-10">
+          {item.line2}
+        </span>
+      </h1>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
