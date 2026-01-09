@@ -20,7 +20,12 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               
-                <img src="images\logo-no-bg-orange.png" alt="ko" className='size-16'/>
+                <img
+                  src="images/logo-no-bg-orange.png"
+                  className="h-16 w-16 max-w-full"
+                  alt="logo"
+                />
+
               
               <span className="text-2xl font-bold text-orange-400 tracking-tight">Orbitracker</span>
             </div>
